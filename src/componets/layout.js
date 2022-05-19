@@ -7,7 +7,7 @@ function createHeader() {
     name.classList.add("name");
     name.textContent = "Puzzle";
 
-    header.appendChild(name);
+    header.appendChil(name);
     header.appendChild(createNav());
     
     return header;
@@ -19,6 +19,11 @@ function createNav() {
     const menu = document.createElement("div");
     const contact = document.createElement("div");
 
+    nav.classList.add("nav")
+    home.classList.add("hom")
+    menu.classList.add("menu")
+    contact.classList.add("contact")
+
     home.textContent = "Home";
     menu.textContent = "Menu";
     contact.textContent = "Contact";
@@ -27,16 +32,26 @@ function createNav() {
     nav.appendChild(menu);
     nav.appendChild(contact);
 
-    return nav
+    return nav;
 
 
 }
 function createMain() {
-    const main = document.createElement("main")
+    const main = document.createElement("main");
+    const h1 = document.createElement("h1");
+    const p = document.createElement("p");
+
+    h1.textContent = "Puzzle";
+    p.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+    main.appendChild(h1);
+    main.appendChild(p);
+    return main;
+
 }
 
 function createFooter() {
 
 }
 
-export default createHeader;
+export {createHeader, createMain} ;
