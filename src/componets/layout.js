@@ -1,4 +1,5 @@
 
+
 function createHeader() {
     const header = document.createElement("header");
     header.classList.add("header");
@@ -7,7 +8,7 @@ function createHeader() {
     name.classList.add("name");
     name.textContent = "Puzzle";
 
-    header.appendChil(name);
+    header.appendChild(name);
     header.appendChild(createNav());
     
     return header;
