@@ -1,5 +1,5 @@
 import './styles/styles.css';
-import {createHeader, createMain} from './componets/layout.js'
+import {createHeader, createMain, addListener} from './componets/layout.js'
 
 
 
@@ -8,7 +8,8 @@ function component() {
     // const header = createHeader()
     content.appendChild(createHeader());
     content.appendChild(createMain());
-    console.log('Hello')
+    console.log('Hello');
+    // addListener();
     return content;
 }
 

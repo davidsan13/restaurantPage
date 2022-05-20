@@ -9,7 +9,7 @@
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, hgroup, menu, section {
   display: block;
 }
 
@@ -56,10 +56,44 @@ html {
 font-size: 62.5%;
 }
 
+body {
+    height: 100vh
+}
+
+// Home Page
+
 .header {
-    background: var(--color-primary)
+    height: 15vh;
+    font-size: 2.5rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: end;
+    align-content: end;
+    padding: 0 1rem;
+    .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: end;
+    }
 }
 
 main {
+    height: 85vh;
     background: url('../componets/main.jpeg');
+    background-size: cover;
+    color: var(--color-white);
+}
+
+// Menu Page
+
+.main.menu {
+    font-size: 4rem;
+    display: grid;
+    // align-content: center;
+    justify-content: center;
+    .title {
+        grid-row-start: 1 / 2;
+    }
 }

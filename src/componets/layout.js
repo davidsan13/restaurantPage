@@ -1,4 +1,4 @@
-
+import createPage from "../Menu/menu.js"
 
 function createHeader() {
     const header = document.createElement("header");
@@ -33,6 +33,13 @@ function createNav() {
     nav.appendChild(menu);
     nav.appendChild(contact);
 
+    
+   
+    menu.addEventListener("click", (e) => {
+      if (e.target.classList.contains("active")) return;
+      createPage();
+    });
+
     return nav;
 
 
@@ -42,6 +49,7 @@ function createMain() {
     const h1 = document.createElement("h1");
     const p = document.createElement("p");
 
+    main.classList.add("main")
     h1.textContent = "Puzzle";
     p.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
@@ -51,8 +59,14 @@ function createMain() {
 
 }
 
+function addListener() {
+    const navBtn = document.querySelector(".menu")
+
+    navBtn.addEventListener("click", createPage())
+
+}
 function createFooter() {
 
 }
 
-export {createHeader, createMain} ;
+export {createHeader, createMain, addListener} ;
