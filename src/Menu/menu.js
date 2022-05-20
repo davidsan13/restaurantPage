@@ -5,31 +5,54 @@ function createMenuMain() {
    
     const main = document.querySelector("main");
     const h1 = document.createElement("h1");
-    const itemsCont = document.createElement("div");
+    // const itemsCont = document.createElement("div");
 
     main.classList.add("menu");
     h1.classList.add("title");
-    itemsCont.classList.add("container")
+    // itemsCont.classList.add("container");
 
-    h1.textContent = "Menu"
+    h1.textContent = "Menu";
+
+    // itemsCont.appendChild(createCard());
 
     main.appendChild(h1);
-    main.appendChild(itemsCont)
+    main.appendChild(createCard())
 
     console.log("hello")
     return main
 }
 
-function displayMenu() {
-    console.log(json.menu.item)
+function createCard() {
+    const itemsCont = document.createElement("div");
+    const items = json.menu;
+    items.forEach((item) => {
+        let div = document.createElement("div");
+        const title = document.createElement("h1");
+        const price = document.createElement("h1");
+
+        div.classList.add("card");
+        title.classList.add("item");
+        price.classList.add("price");
+
+        const getTitle = item.item;
+        const getPrice = item.price;
+
+        title.textContent = getTitle;
+        price.textContent = getPrice;
+
+        div.appendChild(title);
+        div.appendChild(price);
+
+        itemsCont.appendChild(div);
+        
+    })
+    return itemsCont
 }
 
 function createPage() {
     const homeMain = document.querySelector("main")
     homeMain.textContent = "";
     createMenuMain()
-    console.log(json.menu[0].item)
-    console.log("createPage")
 }
 
 export default createPage;
