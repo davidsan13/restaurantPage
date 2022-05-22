@@ -1,7 +1,5 @@
 import json from './menu.json5';
 
-var a = 4;
-
 function createMenuMain() {
   const main = document.querySelector('main');
   const h1 = document.createElement('h1');
@@ -24,6 +22,7 @@ function createMenuMain() {
 
 function createCard() {
   const itemsCont = document.createElement('div');
+  itemsCont.classList.add('itemsCont');
   const items = json.menu;
   items.forEach((item) => {
     const div = document.createElement('div');
