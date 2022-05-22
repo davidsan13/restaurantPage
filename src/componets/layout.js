@@ -1,18 +1,6 @@
-import createPage from '../Menu/menu';
-
-function createHeader() {
-  const header = document.createElement('header');
-  header.classList.add('header');
-
-  const name = document.createElement('h1');
-  name.classList.add('name');
-  name.textContent = 'Puzzle';
-
-  header.appendChild(name);
-  header.appendChild(createNav());
-
-  return header;
-}
+import createPage from '../menu/menu';
+import loadHome from '../home/home';
+import loadContact from '../contact/contact';
 
 function createNav() {
   const nav = document.createElement('nav');
@@ -38,8 +26,27 @@ function createNav() {
     createPage();
   });
 
+  home.addEventListener('click', (e) => {
+    if (e.target.classList.contains('active')) return;
+    loadHome();
+  });
   return nav;
 }
+
+function createHeader() {
+  const header = document.createElement('header');
+  header.classList.add('header');
+
+  const name = document.createElement('h1');
+  name.classList.add('name');
+  name.textContent = 'Puzzle';
+
+  header.appendChild(name);
+  header.appendChild(createNav());
+
+  return header;
+}
+
 function createMain() {
   const main = document.createElement('main');
   const h1 = document.createElement('h1');
