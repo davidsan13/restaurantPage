@@ -1,6 +1,8 @@
 import './styles/styles.css';
 import { createHeader, createMain, addListener } from './componets/layout';
 
+var x = 4;
+
 function component() {
   const content = document.getElementById('content');
   // const header = createHeader()

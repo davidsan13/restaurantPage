@@ -30,6 +30,11 @@ function createNav() {
     if (e.target.classList.contains('active')) return;
     loadHome();
   });
+
+  contact.addEventListener('click', (e) => {
+    if (e.target.classList.contains('active')) return;
+    loadContact();
+  });
   return nav;
 }
 
