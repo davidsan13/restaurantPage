@@ -2,7 +2,6 @@ import './styles/styles.css';
 import initializeWebsite from './componets/layout';
 
 function component() {
-  
   return initializeWebsite();
 }
 
