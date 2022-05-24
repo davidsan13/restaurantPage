@@ -49,7 +49,7 @@ function createMenuMain() {
 
 function createPage() {
   const homeMain = document.querySelector('main');
-  
+  homeMain.classList.remove('menu', 'home');
   homeMain.textContent = '';
   createMenuMain();
 }

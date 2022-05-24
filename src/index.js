@@ -1,16 +1,9 @@
 import './styles/styles.css';
-import { createHeader, createMain, addListener } from './componets/layout';
-
-var x = 4;
+import initializeWebsite from './componets/layout';
 
 function component() {
-  const content = document.getElementById('content');
-  // const header = createHeader()
-  content.appendChild(createHeader());
-  content.appendChild(createMain());
-  console.log('Hello');
-//   addListener();
-  return content;
+  
+  return initializeWebsite();
 }
 
 component();

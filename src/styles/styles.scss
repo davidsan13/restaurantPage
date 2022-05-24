@@ -37,7 +37,7 @@ border-spacing: 0;
 }
 
 :root{
-    --color-primary: #191d2b;
+    --color-primary: rgb(255, 255, 255);
     --color-secondary: #168FFF;
     --color-white: #FFFFFF;
     --color-black: #000;
@@ -49,7 +49,7 @@ border-spacing: 0;
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
     --br-sm-2: 14px;
-    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+    --box-shadow-1: 0 3px 15px rgba(37, 37, 37, 0.356);
 }
 
 html {
@@ -63,10 +63,12 @@ body {
 // Home Page
 
 .header {
+    position: relative;
     height: 15vh;
     font-size: 2.5rem;
     background: var(--color-primary);
-    color: var(--color-white);
+    color: var(--color-grey-4);
+    box-shadow: var(--box-shadow-1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: end;
@@ -79,11 +81,41 @@ body {
     }
 }
 
-main {
+.main{
     height: 85vh;
-    background: url('../componets/main.jpeg');
-    background-size: cover;
+    // background: url('../home/taco.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: 50% 50%;
     color: var(--color-white);
+    position: relative;
+    // opacity: .8;
+    &::before {
+        content: "";
+        position: absolute;
+        background: url('../home/taco.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+    &.home {
+        font-size: 8rem;
+        font-weight: bold;
+        color: var(--color-black);
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+    .textCon{
+        position: relative;
+    }
+    p {
+        font-size: 4rem;
+        width: 90rem;
+        // opacity: .8;
+    }
 }
 
 // Menu Page

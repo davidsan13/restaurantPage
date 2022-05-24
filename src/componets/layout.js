@@ -54,16 +54,9 @@ function createHeader() {
 
 function createMain() {
   const main = document.createElement('main');
-  const h1 = document.createElement('h1');
-  const p = document.createElement('p');
 
   main.classList.add('main');
-  h1.textContent = 'Puzzle';
-  p.textContent =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-
-  main.appendChild(h1);
-  main.appendChild(p);
+  
   return main;
 }
 
@@ -74,6 +67,17 @@ function addListener() {
 
   console.log(navBtn);
 }
+
+function initializeWebsite() {
+  const content = document.getElementById('content');
+
+  content.appendChild(createHeader());
+  content.appendChild(createMain());
+  content.appendChild(loadHome());
+
+  return content;
+}
+
 function createFooter() { }
 
-export { createHeader, createMain, addListener };
+export default initializeWebsite;

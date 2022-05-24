@@ -38,7 +38,7 @@ table {
 }
 
 :root {
-  --color-primary: #191d2b;
+  --color-primary: rgb(255, 255, 255);
   --color-secondary: #168FFF;
   --color-white: #FFFFFF;
   --color-black: #000;
@@ -50,7 +50,7 @@ table {
   --color-grey-5: #2a2e35;
   --color-grey-6: #12181b;
   --br-sm-2: 14px;
-  --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+  --box-shadow-1: 0 3px 15px rgba(37, 37, 37, 0.356);
 }
 
 html {
@@ -62,10 +62,13 @@ body {
 }
 
 .header {
+  position: relative;
   height: 15vh;
   font-size: 2.5rem;
   background: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-grey-4);
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -86,11 +89,45 @@ body {
   justify-items: end;
 }
 
-main {
+.main {
   height: 85vh;
-  background: url("../componets/main.jpeg");
-  background-size: cover;
   color: var(--color-white);
+  position: relative;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  background: url("../home/taco.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.main.home {
+  font-size: 8rem;
+  font-weight: bold;
+  color: var(--color-black);
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .textCon {
+  position: relative;
+}
+
+.main p {
+  font-size: 4rem;
+  width: 90rem;
 }
 
 .main.menu {
