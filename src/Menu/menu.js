@@ -1,6 +1,11 @@
 import json from './menu.json5';
+import img1 from './img/1.jpg';
+import img2 from './img/2.jpg';
+import img3 from './img/3.jpg';
+import img4 from './img/4.jpg';
 
 function createCard() {
+  const images = [img1, img2, img3, img4];
   const itemsCont = document.createElement('div');
   itemsCont.classList.add('itemsCont');
   const items = json.menu;
@@ -8,17 +13,25 @@ function createCard() {
     const div = document.createElement('div');
     const title = document.createElement('h1');
     const price = document.createElement('h1');
+    const img = document.createElement('img');
 
     div.classList.add('card');
     title.classList.add('item');
     price.classList.add('price');
+    img.classList.add('image');
 
     const getTitle = item.item;
     const getPrice = item.price;
+    const getId = item.id;
+
+    // const imgURL = `./img/${getId}.jpg`;
+    const imgURL = "require('./1.jpg')";
 
     title.textContent = getTitle;
     price.textContent = getPrice;
+    img.setAttribute('src', images[getId]);
 
+    div.appendChild(img);
     div.appendChild(title);
     div.appendChild(price);
 

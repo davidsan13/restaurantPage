@@ -74,7 +74,7 @@ body {
 }
 
 .header {
-  height: 15vh;
+  height: 10vh;
   font-size: 4rem;
   font-weight: bold;
   background: var(--color-primary);
@@ -107,23 +107,9 @@ body {
 }
 
 .main {
-  height: 85vh;
+  height: 90vh;
   color: var(--color-white);
   position: relative;
-}
-
-.main::before {
-  content: "";
-  background: url("../home/taco.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: .76;
 }
 
 .main.home {
@@ -135,6 +121,20 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.main.home::before {
+  content: "";
+  background: url("../home/taco.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: .76;
 }
 
 .main .textCon {
@@ -149,17 +149,20 @@ body {
 }
 
 .main.menu {
-  color: black;
+  color: var(--color-black);
+  font-weight: bold;
   font-size: 4rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: .3fr 2fr;
-      grid-template-rows: .3fr 2fr;
+  -ms-grid-rows: .2fr 2fr;
+      grid-template-rows: .2fr 2fr;
 }
 
 .main.menu .title {
+  padding-top: 1.5rem;
+  position: relative;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-column: 1;
@@ -171,16 +174,55 @@ body {
 }
 
 .main.menu .itemsCont {
+  position: relative;
+  font-size: 2rem;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
+  -ms-grid-columns: (minmax(200px, 0.2fr))[2];
+      grid-template-columns: repeat(2, minmax(200px, 0.2fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.main.menu .itemsCont .card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.main.menu .itemsCont .card::before {
+  content: "";
+  background-color: black;
+  opacity: .5;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.main.menu .itemsCont .card .image {
+  width: 15rem;
+  height: 25rem;
 }
 /*# sourceMappingURL=styles.css.map */
