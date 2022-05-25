@@ -1,4 +1,4 @@
-import createPage from '../menu/menu';
+import loadMenu from '../menu/menu';
 import loadHome from '../home/home';
 import loadContact from '../contact/contact';
 
@@ -23,7 +23,7 @@ function createNav() {
 
   menu.addEventListener('click', (e) => {
     if (e.target.classList.contains('active')) return;
-    createPage();
+    loadMenu();
   });
 
   home.addEventListener('click', (e) => {
@@ -42,7 +42,7 @@ function createHeader() {
   const header = document.createElement('header');
   header.classList.add('header');
 
-  const name = document.createElement('h1');
+  const name = document.createElement('a');
   name.classList.add('name');
   name.textContent = 'Puzzle';
 
@@ -56,16 +56,8 @@ function createMain() {
   const main = document.createElement('main');
 
   main.classList.add('main');
-  
+
   return main;
-}
-
-function addListener() {
-  const navBtn = document.querySelector('.menu');
-
-  navBtn.addEventListener('click', createPage());
-
-  console.log(navBtn);
 }
 
 function initializeWebsite() {

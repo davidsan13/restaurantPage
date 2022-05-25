@@ -43,15 +43,14 @@ function createMenuMain() {
   main.appendChild(h1);
   main.appendChild(createCard());
 
-  console.log('hello');
   return main;
 }
 
-function createPage() {
+function loadMenu() {
   const homeMain = document.querySelector('main');
   homeMain.classList.remove('menu', 'home');
   homeMain.textContent = '';
   createMenuMain();
 }
 
-export default createPage;
+export default loadMenu;

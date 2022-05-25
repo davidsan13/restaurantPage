@@ -4,7 +4,6 @@ function createHome() {
   const h1 = document.createElement('h1');
   const p = document.createElement('p');
 
-
   main.classList.add('home');
   textCon.classList.add('textCon');
 

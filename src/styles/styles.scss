@@ -82,15 +82,20 @@ body {
     color: var(--color-grey-4);
     box-shadow: var(--box-shadow-1);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: end;
-    align-content: end;
+    grid-template-columns: 1fr 2fr;
+    // justify-items: end;
+    align-content: center;
     padding: 0 4rem;
-
+    .name{
+        text-align: center;
+        font-size: 6rem;
+    }
     .nav {
+        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        justify-items: end;
+        justify-items: center;
+        align-items: center;
     }
 }
 
@@ -145,6 +150,7 @@ body {
 // Menu Page
 
 .main.menu {
+    color: black;
     font-size: 4rem;
     display: grid;
     grid-template-columns: 1fr;
