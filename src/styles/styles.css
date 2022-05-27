@@ -293,4 +293,14 @@ body {
 .main.contact .rtCon form textarea {
   background-color: #cccccc;
 }
+
+.main.contact .rtCon form input {
+  border: 1px solid black;
+}
+
+.main.contact .rtCon form input[type=submit] {
+  width: 15rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
 /*# sourceMappingURL=styles.css.map */

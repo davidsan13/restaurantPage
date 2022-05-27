@@ -65,7 +65,7 @@ function initializeWebsite() {
 
   content.appendChild(createHeader());
   content.appendChild(createMain());
-  content.appendChild(loadHome());
+  loadHome();
 
   return content;
 }

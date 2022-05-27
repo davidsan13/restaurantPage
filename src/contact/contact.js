@@ -1,3 +1,5 @@
+import formValidation from '../validation';
+
 function createForm() {
   const form = document.createElement('form');
   const title = document.createElement('h1');
@@ -7,17 +9,22 @@ function createForm() {
   const inputEmail = document.createElement('input');
   const labelMessage = document.createElement('label');
   const inputMessage = document.createElement('textarea');
+  const submit = document.createElement('input');
 
   title.textContent = 'Contact us';
 
   labelName.htmlFor = 'name';
   labelName.textContent = 'Name';
+  labelName.required = true;
+  inputName.minLength = 3;
+  inputName.setAttribute('id', 'name');
   inputName.setAttribute('type', 'text');
   inputName.setAttribute('name', 'name');
 
   labelEmail.htmlFor = 'email';
   labelEmail.textContent = 'Email';
-  inputEmail.required = true;
+  inputEmail.setAttribute('id', 'email');
+  // inputEmail.required = true;
   inputEmail.setAttribute('type', 'email');
   inputEmail.setAttribute('name', 'email');
 
@@ -25,8 +32,12 @@ function createForm() {
   labelMessage.textContent = 'Message';
   inputMessage.setAttribute('type', 'text');
   inputMessage.setAttribute('name', 'message');
+  inputMessage.required = true;
+  inputMessage.maxLength = 200;
   inputMessage.rows = '4';
   inputMessage.cols = '4';
+
+  submit.setAttribute('type', 'submit');
 
   form.appendChild(labelName);
   form.appendChild(inputName);
@@ -34,7 +45,7 @@ function createForm() {
   form.appendChild(inputEmail);
   form.appendChild(labelMessage);
   form.appendChild(inputMessage);
-
+  form.appendChild(submit);
   return form;
 }
 
@@ -42,7 +53,7 @@ function createContact() {
   const main = document.querySelector('main');
   const rtCon = document.createElement('div');
   const ltCon = document.createElement('div');
-  
+
   const ltP = document.createElement('p');
   const rtTitle = document.createElement('h1');
   const rtP = document.createElement('p');
@@ -50,7 +61,7 @@ function createContact() {
   main.classList.add('contact');
   rtCon.classList.add('rtCon');
   ltCon.classList.add('ltCon');
-  
+
   ltP.classList.add('p');
   rtTitle.classList.add('title');
   rtP.classList.add('p');
@@ -61,14 +72,12 @@ function createContact() {
   rtTitle.textContent = 'Contact Us';
   rtP.textContent = "Let's get in touch";
 
-  
   ltCon.appendChild(ltP);
   rtCon.appendChild(rtTitle);
-  rtCon.appendChild(rtP)
+  rtCon.appendChild(rtP);
   rtCon.appendChild(createForm());
   main.appendChild(ltCon);
   main.appendChild(rtCon);
-  
 
   return main;
 }
@@ -78,6 +87,7 @@ function loadContact() {
   main.classList.remove('menu', 'home');
   main.textContent = '';
   createContact();
+  formValidation();
 }
 
 export default loadContact;

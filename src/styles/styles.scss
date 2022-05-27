@@ -242,8 +242,15 @@ body {
                 input,
                 textarea {
                     background-color: #cccccc;
-        
-                }   
+                }
+                input {
+                    border: 1px solid black;
+                }
+                input[type=submit] {
+                    width: 15rem;
+                    justify-self: center;
+                }
+               
                 
             }
         }
@@ -252,3 +259,4 @@ body {
 }
 
 // Menu Page
+
