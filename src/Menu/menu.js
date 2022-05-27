@@ -25,7 +25,6 @@ function createCard() {
     const getId = item.id;
 
     // const imgURL = `./img/${getId}.jpg`;
-    const imgURL = "require('./1.jpg')";
 
     title.textContent = getTitle;
     price.textContent = getPrice;

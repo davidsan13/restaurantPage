@@ -86,12 +86,13 @@ body {
     // justify-items: end;
     align-content: center;
     padding: 0 4rem;
-    .name{
+
+    .name {
         text-align: center;
         font-size: 6rem;
     }
+
     .nav {
-        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
@@ -107,6 +108,20 @@ body {
     // background-position: 50% 50%;
     color: var(--color-white);
     position: relative;
+
+    .textCon {
+        padding: 18rem;
+        position: relative;
+        p {
+            text-align: justify;
+            font-size: 4rem;
+            width: 90rem;
+            // opacity: .8;
+        }
+    }
+    
+    
+
     &.home {
         font-size: 8rem;
         font-weight: bold;
@@ -114,6 +129,7 @@ body {
         display: grid;
         // align-content: center;
         justify-content: center;
+
         // justify-items: center;
         // align-items: center;
         &::before {
@@ -130,73 +146,109 @@ body {
             opacity: .76
         }
     }
-    .textCon {
-        padding: 18rem;
-        position: relative;
-    }
-
-    p {
-        text-align: justify;
+    &.menu {
+        color: var(--color-black);
+        font-weight: bold;
         font-size: 4rem;
-        width: 90rem;
-        // opacity: .8;
-    }
-}
-
-// Menu Page
-
-.main.menu {
-    color: var(--color-black);
-    font-weight: bold;
-    font-size: 4rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: .2fr 2fr;
-    
-    .title {
-        padding-top: 1.5rem;
-        position: relative;
-        justify-self: center;
-        grid-column: 1 / 3;
-        grid-row: 1 / 2;
-    }
-
-    .itemsCont {
-        position: relative;
-        font-size: 2rem;
-        grid-column: 1 / 2;
         display: grid;
-        grid-template-columns: repeat(2, minmax(200px, .2fr));
-        justify-content: center;
-        gap: 1rem;
-        padding-bottom: 2rem;
-        .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: .2fr 2fr;
+        .title {
+            padding-top: 1.5rem;
             position: relative;
-            display: flex;
-            flex-direction: column;
+            justify-self: center;
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+        .itemsCont {
+            position: relative;
+            font-size: 2rem;
+            grid-column: 1 / 2;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(200px, .2fr));
             justify-content: center;
-            align-items: center;
             gap: 1rem;
-            height: 100%;
-            width: 100%;
+            padding-bottom: 2rem;
+            .card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                height: 100%;
+                width: 100%;
+                &::before {
+                    content: "";
+                    background-color: black;
+                    opacity: .5;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                }
+                .image {
+                    width: 15rem;
+                    height: 25rem;
+                    // flex-grow: 1;
+                }
+            }
+        }
+    }
+    &.contact {
+        color: black;
+        font-size: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        .ltCon {
+            position: relative;
+            padding-top: 15rem;
+            text-align: justify;
+            padding-left: 4rem;
+            padding-right: 4rem;
+            
             &::before {
                 content: "";
                 background-color: black;
-                opacity: .5;
+                opacity: .2;
                 position: absolute;
                 top: 0px;
                 right: 0px;
                 bottom: 0px;
                 left: 0px;
             }
-            .image {
-                width: 15rem;
-                height: 25rem;
-                // flex-grow: 1;
+        }
+        .rtCon {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-rows: .1fr .1fr .3fr;
+            gap: 1.5rem;
+            .title {
+                height: 1px;
             }
-            .price {
+            .p {
+                font-weight: bold;
+                opacity: .7
+            }
+            form {
+                height: 100%;
+                display:grid;
+                grid-template-columns: .5fr;
+                justify-content: center;
+                align-content: center;
+                gap: 1rem;
+                input,
+                textarea {
+                    background-color: #cccccc;
+        
+                }   
+                
             }
         }
-        
+            
     }
 }
+
+// Menu Page

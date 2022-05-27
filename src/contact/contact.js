@@ -17,6 +17,7 @@ function createForm() {
 
   labelEmail.htmlFor = 'email';
   labelEmail.textContent = 'Email';
+  inputEmail.required = true;
   inputEmail.setAttribute('type', 'email');
   inputEmail.setAttribute('name', 'email');
 
@@ -41,23 +42,33 @@ function createContact() {
   const main = document.querySelector('main');
   const rtCon = document.createElement('div');
   const ltCon = document.createElement('div');
-  const title = document.createElement('h1');
-  const p = document.createElement('p');
+  
+  const ltP = document.createElement('p');
+  const rtTitle = document.createElement('h1');
+  const rtP = document.createElement('p');
 
   main.classList.add('contact');
   rtCon.classList.add('rtCon');
   ltCon.classList.add('ltCon');
-  title.classList.add('title');
-  p.classList.add('p');
+  
+  ltP.classList.add('p');
+  rtTitle.classList.add('title');
+  rtP.classList.add('p');
 
-  title.textContent = 'Puzzle';
-  p.textContent =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+  ltP.textContent =
+    "Questions or comments? Feel free to send our support team a message via the form, and we'll be happy to help you out. ";
 
-  ltCon.appendChild(createForm());
-  main.appendChild(title);
-  main.appendChild(p);
+  rtTitle.textContent = 'Contact Us';
+  rtP.textContent = "Let's get in touch";
+
+  
+  ltCon.appendChild(ltP);
+  rtCon.appendChild(rtTitle);
+  rtCon.appendChild(rtP)
+  rtCon.appendChild(createForm());
   main.appendChild(ltCon);
+  main.appendChild(rtCon);
+  
 
   return main;
 }

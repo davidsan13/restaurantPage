@@ -112,6 +112,17 @@ body {
   position: relative;
 }
 
+.main .textCon {
+  padding: 18rem;
+  position: relative;
+}
+
+.main .textCon p {
+  text-align: justify;
+  font-size: 4rem;
+  width: 90rem;
+}
+
 .main.home {
   font-size: 8rem;
   font-weight: bold;
@@ -135,17 +146,6 @@ body {
   bottom: 0px;
   left: 0px;
   opacity: .76;
-}
-
-.main .textCon {
-  padding: 18rem;
-  position: relative;
-}
-
-.main p {
-  text-align: justify;
-  font-size: 4rem;
-  width: 90rem;
 }
 
 .main.menu {
@@ -224,5 +224,73 @@ body {
 .main.menu .itemsCont .card .image {
   width: 15rem;
   height: 25rem;
+}
+
+.main.contact {
+  color: black;
+  font-size: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+}
+
+.main.contact .ltCon {
+  position: relative;
+  padding-top: 15rem;
+  text-align: justify;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.main.contact .ltCon::before {
+  content: "";
+  background-color: black;
+  opacity: .2;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.main.contact .rtCon {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: .1fr .1fr .3fr;
+      grid-template-rows: .1fr .1fr .3fr;
+  gap: 1.5rem;
+}
+
+.main.contact .rtCon .title {
+  height: 1px;
+}
+
+.main.contact .rtCon .p {
+  font-weight: bold;
+  opacity: .7;
+}
+
+.main.contact .rtCon form {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .5fr;
+      grid-template-columns: .5fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 1rem;
+}
+
+.main.contact .rtCon form input,
+.main.contact .rtCon form textarea {
+  background-color: #cccccc;
 }
 /*# sourceMappingURL=styles.css.map */
