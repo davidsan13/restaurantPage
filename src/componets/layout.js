@@ -9,9 +9,9 @@ function createNav() {
   const contact = document.createElement('div');
 
   nav.classList.add('nav');
-  home.classList.add('hom');
-  menu.classList.add('menu');
-  contact.classList.add('contact');
+  home.classList.add('btn');
+  menu.classList.add('btn');
+  contact.classList.add('btn');
 
   home.textContent = 'Home';
   menu.textContent = 'Menu';
@@ -36,6 +36,14 @@ function createNav() {
     loadContact();
   });
   return nav;
+}
+
+function sectionActive(event) {
+  const btns = document.querySelectorAll('.btn');
+
+  btns.forEach((btn) => btn.classList.remove('active'));
+  
+  event.target.classList.add('active');
 }
 
 function createHeader() {
