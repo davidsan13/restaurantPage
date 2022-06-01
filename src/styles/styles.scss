@@ -101,6 +101,23 @@ body {
             border-top: 2px solid black;
         //     background-color: red;
         }
+        .btn {
+            position: relative;
+            
+            &:hover {
+                &::before {
+                    content: "";
+                    background-color: black;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    opacity: .3
+                } 
+            }
+        }
+        
     }
 }
 
