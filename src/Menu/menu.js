@@ -60,7 +60,7 @@ function createMenuMain() {
 
 function loadMenu() {
   const homeMain = document.querySelector('main');
-  homeMain.classList.remove('menu', 'home');
+  homeMain.classList.remove('contact', 'home');
   homeMain.textContent = '';
   createMenuMain();
 }

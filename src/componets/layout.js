@@ -2,6 +2,14 @@ import loadMenu from '../menu/menu';
 import loadHome from '../home/home';
 import loadContact from '../contact/contact';
 
+function sectionActive(event) {
+  const btn = event;
+  const current = document.getElementsByClassName('active');
+
+  current[0].className = current[0].className.replace(' active', '');
+  btn.className += ' active';
+}
+
 function createNav() {
   const nav = document.createElement('nav');
   const home = document.createElement('div');
@@ -23,27 +31,22 @@ function createNav() {
 
   menu.addEventListener('click', (e) => {
     if (e.target.classList.contains('active')) return;
+    sectionActive(e.target);
     loadMenu();
   });
 
   home.addEventListener('click', (e) => {
     if (e.target.classList.contains('active')) return;
+    sectionActive(e.target);
     loadHome();
   });
 
   contact.addEventListener('click', (e) => {
     if (e.target.classList.contains('active')) return;
+    sectionActive(e.target);
     loadContact();
   });
   return nav;
-}
-
-function sectionActive(event) {
-  const btns = document.querySelectorAll('.btn');
-
-  btns.forEach((btn) => btn.classList.remove('active'));
-  
-  event.target.classList.add('active');
 }
 
 function createHeader() {

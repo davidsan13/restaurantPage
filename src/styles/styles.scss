@@ -97,6 +97,10 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
         align-items: center;
+        .active {
+            border-top: 2px solid black;
+        //     background-color: red;
+        }
     }
 }
 

@@ -3,8 +3,10 @@ function createHome() {
   const textCon = document.createElement('div');
   const h1 = document.createElement('h1');
   const p = document.createElement('p');
+  const navHome = document.querySelector('.btn');
 
   main.classList.add('home');
+  navHome.classList.add('active');
   textCon.classList.add('textCon');
 
   h1.textContent = 'Puzzle, Welcome!';

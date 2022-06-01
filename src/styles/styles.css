@@ -106,6 +106,10 @@ body {
           align-items: center;
 }
 
+.header .nav .active {
+  border-top: 2px solid black;
+}
+
 .main {
   height: 90vh;
   color: var(--color-white);
