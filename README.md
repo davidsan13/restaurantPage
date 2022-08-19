@@ -1,4 +1,4 @@
 # restaurantPage
 
 # Objective
-[Live}(https://davidsan13.github.io/restaurantPage/)
+[Live](https://davidsan13.github.io/restaurantPage/)
